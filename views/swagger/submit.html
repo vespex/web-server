@@ -1,0 +1,63 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swagger submit</title>
+  <style>
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+    .page {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+  <h1>提交json文档</h1>
+  <form enctype="multipart/form-data">
+    <input type="file" name="doc" id="doc">
+    <input type="button" value="提交" id="submit">
+  </form>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  $('#submit').on('click', function () {
+    var formData = new FormData();
+    formData.append('doc', $('#doc')[0].files[0]);
+    $.ajax({
+      url: '/swagger/submit',
+      type: 'post',
+      cache: false,
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (res) {
+        alert(res.message)
+      },
+      error: function (err) {
+        console.log(err)
+      }
+    })
+  })
+</script>
+</body>
+
+</html>
