@@ -3,29 +3,30 @@ var router = express.Router();
 var multer = require('multer')
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    console.log(file)
+  destination (req, file, cb) {
     cb(null, 'public/api')
   },
-  filename: function (req, file, cb) {
+  filename (req, file, cb) {
     cb(null, file.originalname)
   }
 })
 
-const route = [
+const api = multer({ storage })
+
+const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'index', path: '/', data: { title: 'xinge\'s page'} },
-  { name: 'swagger', path: '/swagger/*', },
+  { name: 'swagger', path: '/swagger/', },
+  { name: 'swaggerAll', path: '/swagger/*', },
 ]
 
-var api = multer({ storage })
 /* GET home page. */
 route.forEach(item => {
-  let path = item.path.slice(1)
   router.get(item.path, (req, res, next) => {
     let reqPath = req.path.endsWith('/') ? (req.path + 'index') : req.path
     res.render(reqPath.slice(1), item.data || {});
   });
 })
+
 router.post('/swagger/submit', api.single('doc'), (req, res, next) => {
   if(req.file) {
     return res.json({ result: 1, message: '上传成功' })
