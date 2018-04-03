@@ -1,0 +1,352 @@
+.page {
+  text-align: center;
+  position: relative;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.tal {
+  text-align: left;
+}
+.btn {
+  display: inline-block;
+  padding: 0 16px;
+  min-width: 40px;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  border: 1px solid #36A760 ;
+  border-radius: 4px;
+  color: #36A760;
+  text-align: center;
+  font-size: 14px;
+  transition: all .3s;
+}
+
+.btn.nobd {
+  border: 0;
+}
+.btn.lg {
+  min-width: 148px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+}
+.btn.primary, .btn.primary:hover {
+  border-color: #fff;
+  background-color: #36A760;
+  color: #fff;
+}
+.btn:hover {
+  color: #44bd71;
+  border-color: #44bd71;
+}
+.btn.primary:hover {
+  background-color: #44bd71;
+}
+.btn.radius {
+  border-radius: 999px;
+}
+.btn i {
+  margin-left: 15px;
+  margin-right: -10px;
+}
+.inline .item {
+  display: inline-block;
+  vertical-align: middle;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
+.text-item {
+  padding: 50px 0 80px 0;
+}
+.text-item .hd {
+  padding-bottom: 45px;
+}
+.text-item .hd h1{
+  font-size: 44px;
+}
+.text-item .hd h2{
+  font-size: 40px;
+}
+.text-item .hd h3{
+  font-size: 36px;
+}
+.text-item .hd h4{
+  font-size: 32px;
+}
+.text-item .hd h5{
+  font-size: 28px;
+}
+.text-item .hd h6{
+  font-size: 24px;
+}
+.text-item .hd p {
+  font-size: 14px;
+  margin-top: 12px;
+}
+.text-item .hd p.lg {
+  font-size: 20px;
+  margin-top: 17px;
+}
+.text-item em {
+  font-style: normal;
+  color: #36A760;
+}
+.icon-item .icon {
+  margin-bottom: 20px;
+}
+.icon-item p {
+  margin-top: 9px;
+  font-size: 14px;
+}
+.icon-item span {
+  font-size: 12px;
+  color: #999;
+}
+.icon-item .text {
+  text-align: left;
+  margin-top: 10px;
+}
+.intro-item .photo {
+  float: left;
+  margin-right: 20px;
+}
+.intro-item .info {
+  padding: 15px 20px 0 0;
+  text-align: left;
+}
+
+
+.logo {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 142px;
+  height: 24px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.banner {
+  height: 480px;
+  background: url(../img/banner.png) center no-repeat;
+  background-color: #36A760;
+  color: #fff;
+}
+.banner .text-item{
+  text-align: left;
+  padding-top: 150px;
+}
+.intro-list .text-item .hd p{
+  color: #999;
+}
+.top {
+  position: absolute;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  color: #fff;
+}
+.top .user {
+  float: right;
+}
+.top .user .btn {
+  vertical-align: middle;
+  margin-left: 16px;
+}
+.top .nav {
+  text-align: left;
+}
+.top .nav .nav-list {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 40px;
+}
+.top .nav .nav-list a {
+  display: block;
+  width: 120px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+.top .nav .nav-list a:hover {
+  opacity: .8;
+}
+
+.good .item {
+  width: 240px;
+  margin: 0 25px;
+}
+.scene .item {
+  width: 120px;
+  margin: 0 16px;
+}
+.solution {
+  background: #f3f4f6;
+}
+.solution .item {
+  width: 500px;
+  margin: 0 40px;
+  background: #fff;
+}
+.solution .item .photo img{
+  width: 240px;
+  height: 240px;
+}
+.solution .item .info {
+  line-height: 1.8;
+}
+.solution .item .info p{
+  margin-top: 5px;
+  color: #999;
+}
+.solution .item .btn-list {
+  margin-top: 20px;
+}
+.solution .item .btn-list .btn {
+  margin-right: 10px;
+}
+.advantage .item {
+  width: 180px;
+  margin: 0 25px;
+}
+.flow .item {
+  width: 160px;
+}
+.flow .item.arrow {
+  vertical-align: top;
+  padding-top: 35px;
+  width: 80px;
+}
+.case-center {
+  background: #4B504C;
+  color: #fff;
+}
+.case-center .text-item {
+  padding-bottom: 0;
+}
+.case-center .text-item .hd p {
+  color: #ddd;
+}
+.case-center .item {
+  margin: 0 20px;
+}
+.case-center .qr-item {
+  display: block;
+  width: 260px;
+  height: 388px;
+  background: url(../img/bg_iphone.png) no-repeat;
+  background-size: contain;
+}
+.bull-icon {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url(../img/icon_bull.png) no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.bull-icon.icon2 {
+  background-position: -100px 0;
+}
+.bull-icon.icon3 {
+  background-position: -200px 0;
+}
+.bull-icon.icon4 {
+  background-position: -300px 0;
+}
+.scene-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url(../img/icon_scene.png) no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.scene-icon.icon2 {
+  background-position: -80px 0;
+}
+.scene-icon.icon3 {
+  background-position: -160px 0;
+}
+.scene-icon.icon4 {
+  background-position: -240px 0;
+}
+.scene-icon.icon5 {
+  background-position: -320px 0;
+}
+.scene-icon.icon6 {
+  background-position: -400px 0;
+}
+.scene-icon.icon7 {
+  background-position: -480px 0;
+}
+.advantage-icon {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url(../img/icon_advantage.png) no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.advantage-icon.icon2 {
+  background-position: -100px 0;
+}
+.advantage-icon.icon3 {
+  background-position: -200px 0;
+}
+.advantage-icon.icon4 {
+  background-position: -300px 0;
+}
+.advantage-icon.icon5 {
+  background-position: -400px 0;
+}
+.flow-icon {
+  display: inline-block;
+  width: 93px;
+  height: 82px;
+  background: url(../img/icon_flow.png) no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  margin-left: -11px;
+}
+.flow-icon.icon2 {
+  background-position: -93px 0;
+}
+.flow-icon.icon3 {
+  background-position: -186px 0;
+}
+.flow-icon.icon4 {
+  background-position: -279px 0;
+}
+.icon-arrow-r {
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+  background: url(../img/icon_arrow_r.png) no-repeat;
+  background-size: contain;
+}
+.icon-arrow-r.green {
+  background-image: url(../img/icon_arrow_r_g.png);
+}
+.icon-arrow-d, .icon-arrow-d {
+  display: inline-block;
+  width: 73px;
+  height: 20px;
+  background: url(../img/icon_arrow_dashed.png) no-repeat;
+  background-size: contain;
+}
+.register-now h5 {
+  padding: 20px 0  30px 0;
+}
+.copyright {
+  border-top: 1px solid #e5e5e5;
+  padding: 28px 0;
+  color: #666;
+}

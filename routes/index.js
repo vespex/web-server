@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer')
-
+// require('../data/db.js')
 const storage = multer.diskStorage({
   destination (req, file, cb) {
     cb(null, 'public/api')
@@ -15,6 +15,7 @@ const api = multer({ storage })
 
 const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'index', path: '/', data: { title: 'xinge\'s page'} },
+  { name: 'pc', path: '/pc/'},
   { name: 'swagger', path: '/swagger/', },
   { name: 'swaggerAll', path: '/swagger/*', },
 ]
@@ -33,5 +34,126 @@ router.post('/swagger/submit', api.single('doc'), (req, res, next) => {
   }
   return res.json({ result: 0, message: '上传失败' })
 });
+
+// const list = [
+//   {
+//     id: 1,
+//     checked: true,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 2,
+//     min: 2,
+//     max: 10,
+//   },
+//   {
+//     id: 2,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 10,
+//     min: 1,
+//     max: 200,
+//   },
+//   {
+//     id: 3,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 6,
+//     min: 5,
+//     max: 200,
+//   },
+//   {
+//     id: 4,
+//     checked: true,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 2,
+//     min: 2,
+//     max: 10,
+//   },
+//   {
+//     id: 5,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 10,
+//     min: 1,
+//     max: 200,
+//   },
+//   {
+//     id: 6,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 6,
+//     min: 5,
+//     max: 200,
+//   },
+//   {
+//     id: 7,
+//     checked: true,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 2,
+//     min: 2,
+//     max: 10,
+//   },
+//   {
+//     id: 8,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 10,
+//     min: 1,
+//     max: 200,
+//   },
+//   {
+//     id: 9,
+//     checked: false,
+//     avatar: 'https://dummyimage.com/160x160',
+//     title: '运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装 运动服套装女2018春季新款韩版春装',
+//     spec: 'S码 蓝色',
+//     price: '198.00',
+//     num: 6,
+//     min: 5,
+//     max: 200,
+//   }
+// ]
+
+// router.post('/mp/cart/update', (req, res, next) => {
+//   const { changeList } = req.body
+//   changeList.forEach(item => {
+//     let {id, ...data} = item
+//     let {num} = data
+//     if (num === 0) {
+//       list.splice(list.findIndex(itm => itm.id === id), 1)
+//     } else {
+//       let cartItem = list.find(itm => itm.id === id)
+//       cartItem && Object.assign(cartItem, data)
+//     }
+//   })
+//   res.send({ status: 1, data: { list }, message: 'ok' })
+// });
+
+// router.get('/mp/cart/list', (req, res, next) => {
+//   res.send({ status: 1, data: { list }, message: 'ok' })
+// });
 
 module.exports = router;

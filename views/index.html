@@ -1,12 +1,385 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>快麦小程序</title>
+    <link rel="stylesheet" href="/index/css/reset.css">
+    <link rel="stylesheet" href="/index/css/style.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="page">
+      <div class="header">
+        <div class="top">
+          <div class="container">
+            <div class="user">
+              <a href="/pc#/login" class="btn primary">登录</a>
+              <a href="/pc#/register" class="btn">注册</a>
+            </div>
+            <div class="nav">
+              <a href="/" class="logo">
+                <h1>快麦小程序</h1>
+              </a>
+              <!-- <ul class="nav-list inline">
+                <li class="item">
+                  <a href="/">首页</a>
+                </li>
+                <li class="item">
+                  <a href="/">产品中心</a>
+                </li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="banner">
+          <ul class="banner-list">
+            <li class="item">
+              <div class="container">
+                <div class="text-item">
+                  <div class="hd">
+                    <h1>小程序独立在线商城</h1>
+                    <p>用快麦微商城，一件轻松生成，快速开启移动社交电商新时代</p>
+                  </div>
+                  <div class="bd">
+                    <a href="/pc#/login" class="btn radius lg nobd">免费试用
+                      <i class="icon-arrow-r green"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="intro-list">
+          <div class="text-item good">
+            <div class="hd">
+              <h3>小程序的<em>利好</em></h3>
+              <p>小程序给电商带来的变革和新趋势</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="bull-icon icon3"></i>
+                    </div>
+                    <h6>用户/粉丝私有化</h6>
+                    <div class="text">
+                      <span>用户/粉丝不再归平台所有，商家完全自主拥有，不为用户引流而烦恼。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="bull-icon icon2"></i>
+                    </div>
+                    <h6>去中心化趋势</h6>
+                    <div class="text">
+                      <span>商家可独立拥有自己的小程序店面，用户直接引流到店，不再沉没于平台众多的店铺之中。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="bull-icon icon4"></i>
+                    </div>
+                    <h6>零佣金</h6>
+                    <div class="text">
+                      <span>小程序开店零佣金，商家不再为传统电商平台各种佣金、费用进行买单。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="bull-icon"></i>
+                    </div>
+                    <h6>即用即走</h6>
+                    <div class="text">
+                      <span>轻应用，即用即走，商家用最简单客户触达方式“二维码”即可招揽客户进店购买。</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-item scene">
+            <div class="hd">
+              <h3>小程序<em>核心场景</em></h3>
+              <p>未来更多小程序的应用场景和流量入口</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon7"></i>
+                    </div>
+                    <p>微信群分享</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon3"></i>
+                    </div>
+                    <p>对话框分享</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon6"></i>
+                    </div>
+                    <p>线下扫码引流到店</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon2"></i>
+                    </div>
+                    <p>附近的小程序展示</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon4"></i>
+                    </div>
+                    <p>顶部聊天下拉</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon"></i>
+                    </div>
+                    <p>公众号关联</p>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="scene-icon icon5"></i>
+                    </div>
+                    <p>搜索查找</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-item solution">
+            <div class="hd">
+              <h3>快麦微商城<em>解决方案</em></h3>
+              <p>多行业解决方案，祝你玩转小程序电商</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="intro-item">
+                    <div class="photo">
+                      <img src="./img/intro_photo1.png" alt="">
+                    </div>
+                    <div class="info">
+                      <h5>商城</h5>
+                      <p>打通微信与传统电商鸿沟，帮你快速创建小程序店铺。</p>
+                      <p>我们提供从商品上架、订单处理、多渠道营销、会员管理到数据分析全套解决方案，帮你轻松玩转社交电商。</p>
+                      <div class="btn-list">
+                        <a href="/pc#/register" class="btn primary">免费试用</a>
+                        <!-- <a href="" class="btn">功能介绍</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="intro-item">
+                    <div class="photo">
+                      <img src="./img/intro_photo2.png" alt="">
+                    </div>
+                    <div class="info">
+                      <h5>零售</h5>
+                      <p>让线下零售商快速拥有自己的小程序店铺。</p>
+                      <p>我们提供从商品、订单、会员、营销活动、数据等多方位一键打通，实现线上线下联动运营，帮你快速进入新零售时代。</p>
+                      <div class="btn-list">
+                        <a href="/pc#/register" class="btn primary">免费试用</a>
+                        <!-- <a href="" class="btn">功能介绍</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-item advantage">
+            <div class="hd">
+              <h3>快麦微商城<em>优势</em></h3>
+              <p>4大核心优势，打造小程序电商核心价值</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="advantage-icon icon3"></i>
+                    </div>
+                    <h6>DIY，一键生成小程序</h6>
+                    <div class="text">
+                      <span>首页支持多种样式，灵活调整，所见即所得式编辑，无需任何技术背景，快速上手，一键生成小程序。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="advantage-icon"></i>
+                    </div>
+                    <h6>强大后台功能</h6>
+                    <div class="text">
+                      <span>后台提供丰富的营销活动模板，会员精细化管理，线上线下销售数据同步分析。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="advantage-icon icon2"></i>
+                    </div>
+                    <h6>全渠道数据打通</h6>
+                    <div class="text">
+                      <span>跟企业已有电商平台或线下门店商品数据、会员数据打通，全渠道轻松管理。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="advantage-icon icon4"></i>
+                    </div>
+                    <h6>系统安全稳定</h6>
+                    <div class="text">
+                      <span>上百人研发团队为你保驾护航，99.99%系统高可用，毫秒级响应速度。</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="advantage-icon icon5"></i>
+                    </div>
+                    <h6>全生态服务</h6>
+                    <div class="text">
+                      <span>可提供和对接打单软件，门店收银软件、ERP、WMS、CRM等，提供全生态服务。</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-item flow">
+            <div class="hd">
+              <h3>开店<em>流程</em></h3>
+              <p>轻松4步拥有自己的小程序店铺</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="flow-icon"></i>
+                    </div>
+                    <p>微信群分享</p>
+                  </div>
+                </li>
+                <li class="item arrow">
+                  <i class="icon-arrow-d"></i>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="flow-icon icon2"></i>
+                    </div>
+                    <p>对话框分享</p>
+                  </div>
+                </li>
+                <li class="item arrow">
+                  <i class="icon-arrow-d"></i>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="flow-icon icon3"></i>
+                    </div>
+                    <p>线下扫码引流到店</p>
+                  </div>
+                </li>
+                <li class="item arrow">
+                  <i class="icon-arrow-d"></i>
+                </li>
+                <li class="item">
+                  <div class="icon-item">
+                    <div class="icon">
+                      <i class="flow-icon icon4"></i>
+                    </div>
+                    <p>附近的小程序展示</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="case-center">
+          <div class="text-item bg">
+            <div class="hd">
+              <h3>案例中心</h3>
+              <p>多店铺案例，满足不同行业应用场景</p>
+            </div>
+            <div class="bd">
+              <ul class="inline">
+                <li class="item">
+                  <div class="qr-item">
+                    
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="qr-item">
+                  
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="qr-item">
+                
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="register-now">
+          <div class="text-item">
+            <h5>现在注册快麦微商城，即享<em>免费开店</em></h5>
+            <a href="/pc#/register" class="btn lg primary radius">立即注册<i class="icon-arrow-r"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="container">
+          <div class="copyright">
+            <p>copyright 2012-2017 kuaimai.com - 浙ICP备09083305号-15</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/index/js/main.js"></script>
   </body>
 </html>
-
