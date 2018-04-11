@@ -143,6 +143,15 @@ h6 {
   text-align: left;
   padding-top: 150px;
 }
+.banner .text-item .hd h1{
+  letter-spacing: 2px;
+}
+.banner .text-item .hd p{
+  letter-spacing: 2px;
+}
+.content .text-item .hd h3,.content .text-item h5,.content .text-item .hd p{
+  letter-spacing: 5px;
+}
 .intro-list .text-item .hd p{
   color: #999;
 }
