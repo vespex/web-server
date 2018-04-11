@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 var multer = require('multer')
 // require('../data/db.js')
@@ -20,8 +21,11 @@ const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'swagger', path: '/swagger/', },
   { name: 'swaggerAll', path: '/swagger/*', },
 ]
-
-var server = require('https').createServer(express());
+var options = process.env.NODE_ENV === 'development' ? {} : {
+  cert: fs.readFileSync('/etc/nginx/ssl/vesper.com.cn/www.vesper.com.cn_bundle.crt'),
+  key: fs.readFileSync('/etc/nginx/ssl/vesper.com.cn/www.vesper.com.cn.key')
+};
+var server = require('https').createServer(options, express());
 var io = require('socket.io')(server);
 
 server.listen(3030);
