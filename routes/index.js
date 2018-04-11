@@ -21,7 +21,7 @@ const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'swaggerAll', path: '/swagger/*', },
 ]
 
-var server = require('http').createServer(express());
+var server = require('https').createServer(express());
 var io = require('socket.io')(server);
 
 server.listen(3030);
