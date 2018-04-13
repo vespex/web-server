@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var config = require('../config')
 var router = express.Router();
 var multer = require('multer')
 var isDev = process.env.NODE_ENV === 'development'
@@ -26,8 +27,8 @@ if (isDev) {
   var server = require('http').createServer(express());
 } else {
   var options = {
-    cert: fs.readFileSync('/etc/nginx/ssl/vesper.com.cn/www.vesper.com.cn_bundle.crt'),
-    key: fs.readFileSync('/etc/nginx/ssl/vesper.com.cn/www.vesper.com.cn.key')
+    cert: fs.readFileSync(config.sslPath + 'www.vesper.com.cn_bundle.crt'),
+    key: fs.readFileSync(config.sslPath + 'www.vesper.com.cn.key')
   };
   var server = require('https').createServer(options, express());
 }
