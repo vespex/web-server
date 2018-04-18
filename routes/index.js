@@ -17,8 +17,10 @@ const storage = multer.diskStorage({
 const api = multer({ storage })
 
 const route = [ // path配置 如无其他配置 需以/结尾
-  { name: 'index', path: '/', data: { title: 'xinge\'s page'} },
+  { name: 'root', path: '/', data: { title: 'xinge\'s page'} },
+  { name: 'index', path: '/index/' },
   { name: 'pc', path: '/pc/'},
+  { name: 'admin', path: '/admin/' },
   { name: 'example', path: '/example/' },
   { name: 'swagger', path: '/swagger/', },
   { name: 'swaggerAll', path: '/swagger/*', },
