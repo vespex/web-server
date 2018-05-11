@@ -9,7 +9,7 @@ router.get('/word', function(req, res, next) {
     let salt = +new Date() + '' + parseInt(Math.random() * 10000)
     let sign = md5(config.wordAppKey + req.query.word + salt + config.wordKey)
     let url = `https://openapi.youdao.com/api?q=${req.query.word}&from=EN&to=zh_CHS&appKey=${config.wordAppKey}&salt=${salt}&sign=${sign}`
-    util.getData(url)
+    util.request(url)
       .then(data => {
         util.resFormat.success(res, data)
       })

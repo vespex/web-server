@@ -1,4 +1,14 @@
-var request = require('request')
+var fetch = require('node-fetch')
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  }
+
+  const error = new Error(response.statusText);
+  error.response = response;
+  throw error;
+}
 
 const defaultOptions = {
   url: '',
@@ -9,17 +19,9 @@ const defaultOptions = {
   }
 }
 
-const resFormat = {
-  success(res, data = {}) {
-    res.send({ status: 1, message: 'success', data })
-  },
-  error(res, err = 'error') {
-    res.send({ status: 0, message: err })
-  }
-}
+function request(url, options = {}) {
+  let newOptions = { ...defaultOptions, ...options, url }
 
-function getData (url, options = {}) {
-  let newOptions = { ...defaultOptions, ...options, url}
   if (newOptions.method === 'POST' || newOptions.method === 'PUT') {
     if (!(newOptions.body instanceof FormData)) {
       newOptions.headers = {
@@ -36,24 +38,30 @@ function getData (url, options = {}) {
       };
     }
   }
-  return new Promise((resolve, reject) => {
-    request(newOptions, (err, res, body) => {
-      if (!err && res.statusCode === 200) {
-        let data
-        try {
-          data = JSON.parse(res.body)
-        }
-        catch (e) {
-          data = res.body
-        }
-        resolve(data)
+
+  return fetch(url, newOptions)
+    .then(checkStatus)
+    .then((response) => {
+      if (newOptions.method === 'DELETE' || response.status === 204) {
+        return response.text();
       }
-      reject(err || res.statusCode)
+      return response.json();
     })
-  })
+    .catch(err => {
+      throw new Error(err.message)
+    });
+}
+
+const resFormat = {
+  success(res, data = {}) {
+    res.send({ status: 1, message: 'success', data })
+  },
+  error(res, err = 'error') {
+    res.send({ status: 0, message: err })
+  }
 }
 
 module.exports = {
-  getData,
+  request,
   resFormat
 }

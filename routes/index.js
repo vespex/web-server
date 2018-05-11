@@ -26,6 +26,7 @@ const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'example', path: '/example/' },
   { name: 'swagger', path: '/swagger/', },
   { name: 'swaggerAll', path: '/swagger/*', },
+  { name: 'activity', path: '/activity/*', },
 ]
 if (isDev) {
   var server = require('http').createServer(express());
