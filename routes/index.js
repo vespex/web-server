@@ -8,7 +8,7 @@ var isDev = process.env.NODE_ENV === 'development'
 /* upload */
 const storage = multer.diskStorage({
   destination (req, file, cb) {
-    cb(null, 'public/api')
+    cb(null, 'public/json')
   },
   filename (req, file, cb) {
     cb(null, file.originalname)
