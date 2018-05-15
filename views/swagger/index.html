@@ -75,13 +75,13 @@ window.onload = function() {
   let api = 'test'
   params.forEach(item => {
     let param = item.split('=')
-    if (param[0] === 'api') {
+    if (param[0] === 'json') {
       param[1] && (api = param[1])
     }
   })
   // Build a system
   const ui = SwaggerUIBundle({
-    url: window.location.origin + "/api/" + api + ".json",
+    url: window.location.origin + "/json/" + api + ".json",
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
