@@ -19,13 +19,13 @@
     var isIOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
     var downloadUrl = 'https://h5.mizlicai.com/download/'
     var productSchema = 'mizlicai://mizData={"tabSelect":"1"}'
-    if (isIOS) {
-      window.location.href = productSchema;
-    } else {
-      var iframe = document.createElement('iframe')
-      iframe.style.display = 'none'
-      iframe.src = productSchema
-    }
+    // if (isIOS) {
+      window.location.href = productSchema
+    // } else {
+    //   var iframe = document.createElement('iframe')
+    //   iframe.style.display = 'none'
+    //   iframe.src = productSchema
+    // }
     setTimeout(function () {
       window.location.href = downloadUrl
     }, 1000)
