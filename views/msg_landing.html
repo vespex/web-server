@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>首页</title>
+  </head>
+  <body>
+    <div class="page">
+      
+    </div>
+  </body>
+  <script>
+    var isIOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    var downloadUrl = 'https://h5.mizlicai.com/download/'
+    var productSchema = 'mizlicai://mizData={"tabSelect": "1"}'
+    if (isIOS) {
+      window.location.href = productSchema;
+    } else {
+      var iframe = document.creatElement('iframe')
+      iframe.style.display = 'none'
+      iframe.src = productSchema
+    }
+    setTimeout(function () {
+      iframe && (iframe = document.body.removeChild(iframe))
+      window.location.href = downloadUrl
+    }, 2000)
+  </script>
+</html>

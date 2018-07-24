@@ -22,6 +22,6 @@ router.get('/word', function(req, res, next) {
 });
 
 router.get('/test', function (req, res, next) {
-  res.send({staus: 1, message: 'ok', data: {}})
+  res.send({status: 0, message: 'ok', data: {}})
 });
 module.exports = router;
