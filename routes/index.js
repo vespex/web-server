@@ -1,9 +1,10 @@
-var express = require('express');
-var fs = require('fs');
-var config = require('../config')
-var router = express.Router();
-var multer = require('multer')
-var isDev = process.env.NODE_ENV === 'development'
+const express = require('express');
+const fs = require('fs');
+const config = require('../config')
+const router = express.Router();
+const multer = require('multer')
+const isDev = process.env.NODE_ENV === 'development'
+
 // require('../data/db.js')
 /* upload */
 const storage = multer.diskStorage({
@@ -28,22 +29,25 @@ const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'swaggerAll', path: '/swagger/*', },
   { name: 'activity', path: '/activity/*', },
 ]
+
+let server
+
 if (isDev) {
-  var server = require('http').createServer(express());
+  server = require('http').createServer(express());
 } else {
-  var options = {
+  const options = {
     cert: fs.readFileSync(config.sslPath + 'www.vesper.com.cn_bundle.crt'),
     key: fs.readFileSync(config.sslPath + 'www.vesper.com.cn.key')
   };
-  var server = require('https').createServer(options, express());
+  server = require('https').createServer(options, express());
 }
 
 /* socket.io */
-var io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 server.listen(3030);
 
-var connectNum = 0
+let connectNum = 0
 io.on('connection', (socket) => {
   connectNum++
   console.log('socket count: ' + connectNum)

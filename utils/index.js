@@ -1,4 +1,7 @@
-var fetch = require('node-fetch')
+const fetch = require('node-fetch')
+const req = require('request')
+const fs = require('fs')
+const path = require('path')
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -52,6 +55,11 @@ function request(url, options = {}) {
     });
 }
 
+function download (url, savePath = './public', rename) {
+  const name = rename || url.match(/(\w+)\.(\w+)$/g)[0]
+  req(url).pipe(fs.createWriteStream(savePath + name))
+}
+
 const resFormat = {
   success(res, data = {}) {
     res.send({ status: 1, message: 'success', data })
@@ -63,5 +71,6 @@ const resFormat = {
 
 module.exports = {
   request,
+  download,
   resFormat
 }
