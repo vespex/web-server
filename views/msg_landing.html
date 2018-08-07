@@ -16,9 +16,16 @@
     </div>
   </body>
   <script>
+    var params = location.search.slice(1).split('&')[0].split('=')
     var isIOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
     var downloadUrl = 'https://h5.mizlicai.com/download/'
-    var productSchema = 'mizlicai://mizData={"tabSelect":"1"}'
+    var defKey = 'tabSelect'
+    var defVal = 1
+    if (params.length === 2) {
+      defKey = params[0]
+      defVal = params[1]
+    }
+    var productSchema = 'mizlicai://mizData={"' + defKey + '":"' + defVal + '"}'
 
     window.location.href = productSchema
     setTimeout(function () {
