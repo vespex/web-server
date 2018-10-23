@@ -120,13 +120,14 @@
       {"name":"笋干焖肚条","price":"68"}
     ]
     submit.onclick = function () {
+      var temp = menu.slice()
       var val = document.getElementById('num').value
       var list = ''
       var price = 0
       if (val <= 0) return alert('请输入正确的数量')
-      if (val >= menu.length) return alert('不能超过' + menu.length)
+      if (val >= temp.length) return alert('不能超过' + temp.length)
       for (var i = 0; i < val; i++) {
-        var cur = menu.splice(Math.floor(Math.random() * menu.length), 1)
+        var cur = temp.splice(Math.floor(Math.random() * temp.length), 1)
         current.push(cur[0])
         list += '<li>' + cur[0].name + '</li>'
         price+= +cur[0].price
