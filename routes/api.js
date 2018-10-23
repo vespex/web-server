@@ -24,9 +24,9 @@ router.get('/word', (req, res, next) => {
 
 router.get('/test', (req, res, next) => {
   res.send({
-    status: 0,
-    message: 'ok',
-    data: {}
+    'status': 0,
+    'message': 'ok',
+    'data': {}
   })
 });
 

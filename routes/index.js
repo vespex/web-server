@@ -22,6 +22,7 @@ const api = multer({ storage })
 const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'root', path: '/', data: { title: 'xinge\'s page'} },
   { name: 'index', path: '/index/' },
+  { name: 'menu', path: '/menu/' },
   { name: 'pc', path: '/pc/'},
   { name: 'admin', path: '/admin/' },
   { name: 'example', path: '/example/' },

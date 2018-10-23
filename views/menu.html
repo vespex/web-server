@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>点餐</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        
+      </div>
+      <div class="content">
+       <input id="num" type="text" value="" placeholder="请输入点菜数量">
+       <button id="submit">开点</button>
+       <div class="result">
+         <ul id="list"></ul>
+         <div id="price"></div>
+       </div>
+      </div>
+      <div class="footer">
+      </div>
+    </div>
+  </body>
+  <script>
+    var submit = document.getElementById('submit')
+    var current = []
+    var menu= [
+      {"name":"舌趣辣椒菜","price":"26"},
+      {"name":"香干火腿马兰头","price":"22"},
+      {"name":"白鲞笋干烧毛豆","price":"26"},
+      {"name":"小炒肉丝","price":"16"},
+      {"name":"雪菜蘑菇肉片","price":"26"},
+      {"name":"安吉土粉丝","price":"28"},
+      {"name":"抱腌菜边笋毛豆","price":"26"},
+      {"name":"虾仁尖椒炒土鸡蛋","price":"48"},
+      {"name":"三丝本芹","price":"18"},
+      {"name":"XO酱烧山药","price":"32"},
+      {"name":"鸡爪煲","price":"58"},
+      {"name":"剁椒鱼头煲","price":"138"},
+      {"name":"野鸭千张包","price":"88"},
+      {"name":"红烧蹄髈","price":"78"},
+      {"name":"蛤蜊土肉煲","price":"48"},
+      {"name":"油豆腐扣肉煲","price":"26"},
+      {"name":"风卤鹿茸菌煲","price":"98"},
+      {"name":"土法敲鳝片","price":"88"},
+      {"name":"舌趣大肠煲","price":"58"},
+      {"name":"红烧海鲜拼盘","price":"108"},
+      {"name":"椒盐富贵虾","price":"98"},
+      {"name":"腌笃鲜","price":"38"},
+      {"name":"扎肉","price":"58"},
+      {"name":"三斤鸭","price":"88"},
+      {"name":"手撕羊腿","price":"138"},
+      {"name":"舌趣烤野兔","price":"188"},
+      {"name":"黑椒牛仔骨","price":"128"},
+      {"name":"抱腌土猪头大","price":"158"},
+      {"name":"抱腌土猪头小","price":"78"},
+      {"name":"干烧臭桂鱼","price":"108"},
+      {"name":"抱腌黄鱼鲜","price":"138"},
+      {"name":"蒸三鲜","price":"28"},
+      {"name":"夹饼塔肉","price":"58"},
+      {"name":"荷塘小炒","price":"45"},
+      {"name":"火腿丝瓜烧芋艿","price":"38"},
+      {"name":"汤螺江中鲜","price":"46"},
+      {"name":"红烧荷塘鲜","price":"88"},
+      {"name":"蒜苗炒金钱肚","price":"48"},
+      {"name":"土风肉蒸鳗干","price":"68"},
+      {"name":"风干带鱼蒸鳗干","price":"78"},
+      {"name":"鸡爪炒小石斑","price":"98"},
+      {"name":"大王蛇","price":"288"},
+      {"name":"野生江鳗","price":"488"},
+      {"name":"三丁甜豆","price":"26"},
+      {"name":"花蛤","price":"28"},
+      {"name":"蛏子","price":"38"},
+      {"name":"葱油海瓜子","price":"58"},
+      {"name":"白灼香螺","price":"68"},
+      {"name":"椒盐富贵虾","price":"98"},
+      {"name":"蒜香烤虾","price":"68"},
+      {"name":"传统小炒肉","price":"25"},
+      {"name":"红烧原味鸡","price":"198"},
+      {"name":"隔水蒸安吉土鸡","price":"168"},
+      {"name":"合家欢","price":"88"},
+      {"name":"酱味拼盘","price":"88"},
+      {"name":"萝卜筒骨煲","price":"48"},
+      {"name":"杭式卤鸭","price":"58"},
+      {"name":"狮子头","price":"68"},
+      {"name":"盐卤豆腐","price":"28"},
+      {"name":"目鱼蛋蒸蛋","price":"68"},
+      {"name":"江黄宣","price":"18"},
+      {"name":"生态黄鱼","price":"78"},
+      {"name":"豆腐鱼","price":"28"},
+      {"name":"白鲳鱼","price":"68"},
+      {"name":"沙尖鱼","price":"78"},
+      {"name":"本带鱼","price":"78"},
+      {"name":"大鲥鱼","price":"128"},
+      {"name":"鱿鱼","price":"78"},
+      {"name":"小梅鱼","price":"78"},
+      {"name":"井冈山豆皮","price":"38"},
+      {"name":"尖椒小鱼干","price":"28"},
+      {"name":"黄鱼鲜煎土鸡蛋","price":"88"},
+      {"name":"雪菜炒四宝","price":"32"},
+      {"name":"韭菜炒鱼豆腐","price":"26"},
+      {"name":"鲜地衣炒土鸡蛋","price":"28"},
+      {"name":"馋嘴牛蛙","price":"68"},
+      {"name":"海鲜毛血旺","price":"58"},
+      {"name":"原汤涮牛肉","price":"98"},
+      {"name":"笋干焖肚条","price":"68"}
+    ]
+    submit.onclick = function () {
+      var val = document.getElementById('num').value
+      var list = ''
+      var price = 0
+      if (val <= 0) return alert('请输入正确的数量')
+      if (val >= menu.length) return alert('不能超过' + menu.length)
+      for (var i = 0; i < val; i++) {
+        var cur = menu.splice(Math.floor(Math.random() * menu.length), 1)
+        current.push(cur[0])
+        list += '<li>' + cur[0].name + '</li>'
+        price+= +cur[0].price
+      }
+      document.getElementById('list').innerHTML = list
+      document.getElementById('price').innerText = '共计：' + price + '元'
+    }
+
+  </script>
+</html>
