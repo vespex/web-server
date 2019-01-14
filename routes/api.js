@@ -30,4 +30,15 @@ router.get('/test', (req, res, next) => {
   })
 });
 
+router.get('/proxyApi', (req, res, next) => {
+  const url = req.query.url
+  util.request(url)
+    .then(data => {
+      res.json(data)
+    })
+    .catch(err => {
+      res.json(err)
+    })
+});
+
 module.exports = router;
