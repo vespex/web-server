@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const md5 = require('blueimp-md5')
 const router = express.Router();
 const util = require('../utils')
@@ -30,9 +31,9 @@ router.get('/test', (req, res, next) => {
   })
 });
 
-router.get('/proxyApi', (req, res, next) => {
+router.get('/proxyApi', cors(), (req, res, next) => {
   const url = req.query.url
-  util.request(url)
+  url && util.request(url)
     .then(data => {
       res.json(data)
     })
