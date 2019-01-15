@@ -25,6 +25,7 @@ const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'demo', path: '/demo/' },
   { name: 'share', path: '/share/' },
   { name: 'example', path: '/example/' },
+  { name: 'config', path: '/config/' },
   { name: 'swagger', path: '/swagger/', },
   { name: 'swaggerAll', path: '/swagger/*', },
   { name: 'activity', path: '/activity/*', },

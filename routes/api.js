@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors')
+const fs = require('fs')
 const md5 = require('blueimp-md5')
 const router = express.Router();
 const util = require('../utils')
 const config = require('../config')
+
+const configPath = './public/configs/'
 
 /* GET users listing. */
 router.get('/word', (req, res, next) => {
@@ -40,6 +43,54 @@ router.get('/proxyApi', cors(), (req, res, next) => {
     .catch(err => {
       res.json(err)
     })
+});
+
+router.get('/getConfigList', cors(), (req, res, next) => {
+  const type = fs.readdirSync(configPath)
+  const allFiles = type.map(item => {
+    const files = fs.readdirSync(configPath + item).map(file => file.replace(/\.(.*)/, ''))
+    return {title: item, files}
+  })
+  res.json({
+    status: 0,
+    message: 'ok',
+    data: allFiles
+  })
+});
+router.get('/getConfig', cors(), (req, res, next) => {
+  const path = decodeURIComponent(req.query.path)
+  const filePath = configPath + path + '.json'
+  if (fs.existsSync(filePath)) {
+    const data = fs.readFileSync(filePath, 'utf-8')
+    res.json({
+      status: 0,
+      message: 'ok',
+      data
+    })
+  } else {
+    res.json({
+      status: 1,
+      message: 'no found',
+    })
+  }
+});
+router.post('/saveConfig', cors(), (req, res, next) => {
+  const path = decodeURIComponent(req.body.path)
+  const config = JSON.stringify(req.body.config)
+  const filePath = configPath + path + '.json'
+  if (fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, config)
+    res.json({
+      status: 0,
+      message: 'file update',
+    })
+  } else {
+    fs.writeFileSync(filePath, config)
+    res.json({
+      status: 0,
+      message: 'ok',
+    })
+  }
 });
 
 module.exports = router;
