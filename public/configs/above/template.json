@@ -1,20 +1,77 @@
-{
-  "background": "#ffde98",
-  "color": "#be1f00",
-  "buryCode": "test",
-  "type": 2,
-  "headTop": 320,
-  "bgImg": "https://miz-image.b0.upaiyun.com/activities/2018-12/oilCard/bg.png",
-  "title": "年货节【心意礼盒】专场",
-  "desc": "活动期间，出借专享产品每满指定条件，即可获得相应年货商品，年货数量有限，先出借先得哦！",
-  "activityFlag": "201901nianhuojie",
-  "bannerUrl": "http://www.163.com",
-  "bannerImg": "https://image.mizlicai.com/share/201901/nianhuo.png",
-  "hasFloatIcon": true,
-  "floatIconType": "1",
-  "floatIconImg": "https://image.mizlicai.com/share/201901/nianhuo.png",
-  "shareTitle": "让年味儿更浓，就来米庄年货节！",
-  "shareDesc": "【米庄】坚果零食、粮油水果，您要的年货这里免费领！领完年货还送新春大礼包哦！",
-  "shareLink": "",
-  "shareImgUrl": "https://image.mizlicai.com/share/201901/nianhuo.png"
-}
+[
+  {
+    "key": "background",
+    "value": "#ffde98",
+    "mark": "背景颜色"
+  },
+  {
+    "key": "color",
+    "value": "#be1f00",
+    "mark": "字体颜色"
+  },
+  {
+    "key": "type",
+    "value": "2",
+    "mark": "满赠类型：单标1 多标2 商品标3"
+  },
+  {
+    "key": "headTop",
+    "value": "320",
+    "mark": "头部距离"
+  },
+  {
+    "key": "bgImg",
+    "value": "https://miz-image.b0.upaiyun.com/activities/2018-12/oilCard/bg.png",
+    "mark": "背景图片"
+  },
+  {
+    "key": "title",
+    "value": "年货节【心意礼盒】专场",
+    "mark": "头部标题"
+  },
+  {
+    "key": "desc",
+    "value": "活动期间，出借专享产品每满指定条件，即可获得相应年货商品，年货数量有限，先出借先得哦！",
+    "mark": "头部文字"
+  },
+  {
+    "key": "bannerUrl",
+    "value": "http://www.163.com",
+    "mark": "底部banner跳转链接"
+  },
+  {
+    "key": "bannerImg",
+    "value": "https://image.mizlicai.com/share/201901/nianhuo.png",
+    "mark": "底部banner图片"
+  },
+  {
+    "key": "floatIconType",
+    "value": "http://www.163.com",
+    "mark": "浮动icon 0:不显示 1:弹窗 2:奖品页"
+  },
+  {
+    "key": "floatIconImg",
+    "value": "http://www.163.com",
+    "mark": "浮动icon图片"
+  },
+  {
+    "key": "shareTitle",
+    "value": "让年味儿更浓，就来米庄年货节！",
+    "mark": "分享标题"
+  },
+  {
+    "key": "shareDesc",
+    "value": "【米庄】坚果零食、粮油水果，您要的年货这里免费领！领完年货还送新春大礼包哦！",
+    "mark": "分享文案"
+  },
+  {
+    "key": "shareLink",
+    "value": "",
+    "mark": "分享链接 不填默认当前url"
+  },
+  {
+    "key": "shareImgUrl",
+    "value": "https://image.mizlicai.com/share/201901/nianhuo.png",
+    "mark": "分享图片"
+  }
+]
