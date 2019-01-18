@@ -6,7 +6,7 @@
   },
   {
     "key": "color",
-    "value": "#be1f00",
+    "value": "#fff",
     "mark": "字体颜色"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "key": "headTop",
-    "value": "320",
+    "value": "",
     "mark": "头部距离"
   },
   {
@@ -46,22 +46,22 @@
   },
   {
     "key": "desc",
-    "value": "活动期间，出借专享产品每满指定条件，即可获得相应年货商品，年货数量有限，先出借先得哦！",
+    "value": "",
     "mark": "头部文字"
   },
   {
     "key": "footerBannerUrl",
-    "value": "http://www.163.com",
+    "value": "",
     "mark": "底部banner跳转链接"
   },
   {
     "key": "footerBannerImg",
-    "value": "https://image.mizlicai.com/share/201901/nianhuo.png",
+    "value": "",
     "mark": "底部banner图片"
   },
   {
     "key": "floatIconType",
-    "value": "http://www.163.com",
+    "value": "",
     "mark": "浮动icon 0:不显示 1:弹窗 2:跳转至奖品页 3:跳转至优惠券页"
   },
   {
@@ -71,7 +71,7 @@
   },
   {
     "key": "floatIconImg",
-    "value": "http://www.163.com",
+    "value": "h",
     "mark": "浮动icon图片"
   },
   {
@@ -81,12 +81,12 @@
   },
   {
     "key": "shareTitle",
-    "value": "让年味儿更浓，就来米庄年货节！",
+    "value": "",
     "mark": "分享标题"
   },
   {
     "key": "shareDesc",
-    "value": "【米庄】坚果零食、粮油水果，您要的年货这里免费领！领完年货还送新春大礼包哦！",
+    "value": "",
     "mark": "分享文案"
   },
   {
@@ -96,7 +96,7 @@
   },
   {
     "key": "shareImgUrl",
-    "value": "https://image.mizlicai.com/share/201901/nianhuo.png",
+    "value": "",
     "mark": "分享图片"
   }
 ]
