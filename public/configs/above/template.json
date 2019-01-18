@@ -66,12 +66,12 @@
   },
   {
     "key": "floatIconNum",
-    "value": true,
-    "mark": "是否显示奖品数量"
+    "value": "",
+    "mark": "是否显示奖品数量 需要填1 不需要不填"
   },
   {
     "key": "floatIconImg",
-    "value": "h",
+    "value": "",
     "mark": "浮动icon图片"
   },
   {
