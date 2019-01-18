@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs')
-var compression = require('compression')
+// var compression = require('compression')
 // var cors = require('cors')
 
 var index = require('./routes/index');
@@ -34,7 +34,7 @@ app.engine('html', ejs.__express);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(cors());
-app.use(compression()) // 启用gzip
+// app.use(compression()) // 启用gzip
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

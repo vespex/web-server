@@ -45,7 +45,7 @@ router.get('/proxyApi', cors(), (req, res, next) => {
     })
 });
 
-router.get('/getConfigList', cors(), (req, res, next) => {
+router.get('/getConfigList', (req, res, next) => {
   const type = fs.readdirSync(configPath)
   const allFiles = type.map(item => {
     const files = fs.readdirSync(configPath + item).map(file => file.replace(/\.(.*)/, ''))
@@ -57,7 +57,7 @@ router.get('/getConfigList', cors(), (req, res, next) => {
     data: allFiles
   })
 });
-router.get('/getConfig', cors(), (req, res, next) => {
+router.get('/getConfig', (req, res, next) => {
   const path = decodeURIComponent(req.query.path)
   const filePath = configPath + path + '.json'
   if (fs.existsSync(filePath)) {
@@ -74,7 +74,7 @@ router.get('/getConfig', cors(), (req, res, next) => {
     })
   }
 });
-router.post('/saveConfig', cors(), (req, res, next) => {
+router.post('/saveConfig', (req, res, next) => {
   const path = decodeURIComponent(req.body.path)
   const config = JSON.stringify(req.body.config)
   const filePath = configPath + path + '.json'
@@ -82,13 +82,13 @@ router.post('/saveConfig', cors(), (req, res, next) => {
     fs.writeFileSync(filePath, config)
     res.json({
       status: 0,
-      message: 'file update',
+      message: 'file updated',
     })
   } else {
     fs.writeFileSync(filePath, config)
     res.json({
       status: 0,
-      message: 'ok',
+      message: 'file created',
     })
   }
 });

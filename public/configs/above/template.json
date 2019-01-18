@@ -21,13 +21,28 @@
   },
   {
     "key": "bgImg",
-    "value": "https://miz-image.b0.upaiyun.com/activities/2018-12/oilCard/bg.png",
+    "value": "",
     "mark": "背景图片"
   },
   {
     "key": "title",
-    "value": "年货节【心意礼盒】专场",
-    "mark": "头部标题"
+    "value": "",
+    "mark": "头部标题，可配图片"
+  },
+  {
+    "key": "productTitle",
+    "value": "",
+    "mark": "标的标题，可配图片"
+  },
+  {
+    "key": "footerBannerTitle",
+    "value": "",
+    "mark": "底部banner标题，可配图片"
+  },
+  {
+    "key": "ruleTitle",
+    "value": "活动规则",
+    "mark": "活动规则标题，可配图片"
   },
   {
     "key": "desc",
@@ -35,24 +50,34 @@
     "mark": "头部文字"
   },
   {
-    "key": "bannerUrl",
+    "key": "footerBannerUrl",
     "value": "http://www.163.com",
     "mark": "底部banner跳转链接"
   },
   {
-    "key": "bannerImg",
+    "key": "footerBannerImg",
     "value": "https://image.mizlicai.com/share/201901/nianhuo.png",
     "mark": "底部banner图片"
   },
   {
     "key": "floatIconType",
     "value": "http://www.163.com",
-    "mark": "浮动icon 0:不显示 1:弹窗 2:奖品页"
+    "mark": "浮动icon 0:不显示 1:弹窗 2:跳转至奖品页 3:跳转至优惠券页"
+  },
+  {
+    "key": "floatIconNum",
+    "value": true,
+    "mark": "是否显示奖品数量"
   },
   {
     "key": "floatIconImg",
     "value": "http://www.163.com",
     "mark": "浮动icon图片"
+  },
+  {
+    "key": "giftName",
+    "value": "",
+    "mark": "奖品名称"
   },
   {
     "key": "shareTitle",
