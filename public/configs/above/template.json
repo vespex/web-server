@@ -25,9 +25,19 @@
     "mark": "背景图片"
   },
   {
+    "key": "titleIcon",
+    "value": "",
+    "mark": "头部标题Icon"
+  },
+  {
     "key": "title",
     "value": "",
     "mark": "头部标题，可配图片"
+  },
+  {
+    "key": "desc",
+    "value": "",
+    "mark": "头部文字"
   },
   {
     "key": "productTitle",
@@ -43,11 +53,6 @@
     "key": "ruleTitle",
     "value": "活动规则",
     "mark": "活动规则标题，可配图片"
-  },
-  {
-    "key": "desc",
-    "value": "",
-    "mark": "头部文字"
   },
   {
     "key": "footerBannerUrl",
@@ -80,22 +85,22 @@
     "mark": "奖品名称"
   },
   {
-    "key": "shareTitle",
+    "key": "share-title",
     "value": "",
     "mark": "分享标题"
   },
   {
-    "key": "shareDesc",
+    "key": "share-desc",
     "value": "",
     "mark": "分享文案"
   },
   {
-    "key": "shareLink",
+    "key": "share-link",
     "value": "",
     "mark": "分享链接 不填默认当前url"
   },
   {
-    "key": "shareImgUrl",
+    "key": "share-imgUrl",
     "value": "",
     "mark": "分享图片"
   }
