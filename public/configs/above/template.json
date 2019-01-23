@@ -12,7 +12,7 @@
   {
     "key": "type",
     "value": "2",
-    "mark": "满赠类型：单标1 多标2 商品标3"
+    "mark": "满赠类型：高达1，2，3，4，5种样式任君选择"
   },
   {
     "key": "headTop",
@@ -27,12 +27,12 @@
   {
     "key": "titleIcon",
     "value": "",
-    "mark": "头部标题Icon"
+    "mark": "头部标题Icon，会在标题左右各生成一个对称的icon"
   },
   {
     "key": "title",
     "value": "",
-    "mark": "头部标题，可配图片"
+    "mark": "头部标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
   },
   {
     "key": "desc",
@@ -42,17 +42,17 @@
   {
     "key": "productTitle",
     "value": "",
-    "mark": "标的标题，可配图片"
+    "mark": "标的标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
   },
   {
     "key": "footerBannerTitle",
     "value": "",
-    "mark": "底部banner标题，可配图片"
+    "mark": "底部banner标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
   },
   {
     "key": "ruleTitle",
     "value": "活动规则",
-    "mark": "活动规则标题，可配图片"
+    "mark": "活动规则标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
   },
   {
     "key": "footerBannerUrl",
