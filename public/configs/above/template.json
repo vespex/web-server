@@ -2,32 +2,32 @@
   {
     "key": "background",
     "value": "#ffde98",
-    "mark": "背景颜色"
+    "mark": "默认背景颜色"
   },
   {
     "key": "color",
     "value": "#fff",
-    "mark": "字体颜色"
+    "mark": "默认字体颜色"
   },
   {
     "key": "type",
     "value": "2",
-    "mark": "满赠类型：高达1，2，3，4，5种样式任君选择"
+    "mark": "满赠产品展示类型 高达1，2，3，4，5种样式任君选择"
   },
   {
     "key": "headTop",
     "value": "",
-    "mark": "内容离顶部距离"
+    "mark": "内容离页面顶部的距离"
   },
   {
-    "key": "titleTop",
+    "key": "timeTop",
     "value": "",
-    "mark": "时间离顶部的距离"
+    "mark": "活动时间离页面顶部的距离 不填则不显示时间"
   },
   {
     "key": "bgImg",
     "value": "",
-    "mark": "背景图片"
+    "mark": "背景图片url 如前端已传，需填auto"
   },
   {
     "key": "titleIcon",
@@ -37,32 +37,32 @@
   {
     "key": "title",
     "value": "",
-    "mark": "头部标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
+    "mark": "头部标题，可配图片，如前端已传，需填auto"
   },
   {
     "key": "desc",
     "value": "",
-    "mark": "头部文字"
+    "mark": "头部说明文字"
   },
   {
     "key": "productTitle",
     "value": "",
-    "mark": "标的标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
+    "mark": "标的标题，可配图片，如前端已传，需填auto"
   },
   {
     "key": "footerBannerTitle",
     "value": "",
-    "mark": "底部banner标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
+    "mark": "底部banner标题，可配图片，如前端已传，需填auto"
   },
   {
     "key": "ruleTitle",
     "value": "活动规则",
-    "mark": "活动规则标题，可配图片，填auto则取对应活动标示的cdn资源(需前端配合，详询)"
+    "mark": "活动规则标题，可配图片，如前端已传，需填auto"
   },
   {
     "key": "footerBannerUrl",
     "value": "",
-    "mark": "底部banner跳转链接"
+    "mark": "底部banner的跳转链接，可填页面标示 如 'hongbao','products'"
   },
   {
     "key": "footerBannerImg",
@@ -72,7 +72,7 @@
   {
     "key": "floatIconType",
     "value": "",
-    "mark": "浮动icon 0:不显示 1:弹窗 2:跳转至奖品页 3:跳转至优惠券页"
+    "mark": "浮动icon 1:弹窗 2:跳转至奖品页 3:跳转至优惠券页 不填则不显示"
   },
   {
     "key": "floatIconNumUnit",
@@ -87,12 +87,12 @@
   {
     "key": "floatIconImg",
     "value": "",
-    "mark": "浮动icon图片"
+    "mark": "浮动icon图片 如前端已传，需填auto"
   },
   {
     "key": "giftName",
     "value": "",
-    "mark": "奖品名称"
+    "mark": "奖品名称 浮动icon点击弹窗时会用到"
   },
   {
     "key": "share-title",
