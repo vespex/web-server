@@ -17,7 +17,12 @@
   {
     "key": "headTop",
     "value": "",
-    "mark": "头部距离"
+    "mark": "内容离顶部距离"
+  },
+  {
+    "key": "titleTop",
+    "value": "",
+    "mark": "时间离顶部的距离"
   },
   {
     "key": "bgImg",
@@ -70,9 +75,14 @@
     "mark": "浮动icon 0:不显示 1:弹窗 2:跳转至奖品页 3:跳转至优惠券页"
   },
   {
-    "key": "floatIconNum",
+    "key": "floatIconNumUnit",
     "value": "",
-    "mark": "是否显示奖品数量 需要填1 不需要不填"
+    "mark": "奖品数量的单位 不填则不出现数量"
+  },
+  {
+    "key": "floatIconNumRate",
+    "value": "",
+    "mark": "特殊情况多个奖品对应一个数量"
   },
   {
     "key": "floatIconImg",
