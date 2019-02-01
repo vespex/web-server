@@ -1,0 +1,9 @@
+#waveform {
+  position: absolute;
+  width: 200px;
+  top: 0px;
+  right: 50px;
+}
+#waveform .waveform-opts {
+  text-align: center;
+}
