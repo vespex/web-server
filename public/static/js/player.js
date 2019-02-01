@@ -7,11 +7,11 @@ var Player = function(music) {
 
   var play = function() {
     wavesurfer.play();
-    play.innerText = '暂停';
+    playBtn.innerText = '暂停';
   };
   var pause = function() {
     wavesurfer.pause();
-    play.innerText = '播放';
+    playBtn.innerText = '播放';
   };
   var next = function() {
     index = index < music.length - 1 ? index + 1 : 0
@@ -32,7 +32,6 @@ var Player = function(music) {
 
   var wavesurfer = WaveSurfer.create({
     container: el,
-    height: 20
   });
 
   wavesurfer.setVolume(0.5);

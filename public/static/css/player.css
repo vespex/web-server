@@ -1,8 +1,6 @@
 #waveform {
-  position: absolute;
-  width: 200px;
-  top: 0px;
-  right: 50px;
+  width: 80%;
+  margin: 0 auto;
 }
 #waveform .waveform-opts {
   text-align: center;
