@@ -21,8 +21,9 @@ const api = multer({ storage })
 /* router list */
 const route = [ // path配置 如无其他配置 需以/结尾
   { name: 'root', path: '/', data: { title: 'xinge\'s page'} },
-  { name: 'menu', path: '/menu/' },
-  { name: 'music', path: '/music/' },
+  { name: 'menu', path: '/menu' },
+  { name: 'music', path: '/music' },
+  { name: 'photo', path: '/photo' },
   { name: 'demo', path: '/demo/' },
   { name: 'share', path: '/share/' },
   { name: 'example', path: '/example/' },
@@ -67,7 +68,8 @@ io.on('connection', (socket) => {
 /* GET page */
 route.forEach(item => {
   router.get(item.path, (req, res, next) => {
-    let reqPath = req.path.endsWith('/') ? (req.path + 'index') : req.path
+    let reqPath = item.path.endsWith('/') ? (item.path + 'index') : req.path.replace(/\/$/, '')
+    console.log(reqPath)
     res.render(reqPath.slice(1), item.data || {});
   });
 })

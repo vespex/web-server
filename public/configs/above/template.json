@@ -15,6 +15,11 @@
     "mark": "满赠产品展示类型 高达1，2，3，4，5种样式任君选择"
   },
   {
+    "key": "toH5",
+    "value": "",
+    "mark": "满赠产品购买是否跳h5页面"
+  },
+  {
     "key": "headTop",
     "value": "",
     "mark": "内容离页面顶部的距离"
@@ -43,6 +48,16 @@
     "key": "desc",
     "value": "",
     "mark": "头部说明文字"
+  },
+  {
+    "key": "tipContent",
+    "value": "",
+    "mark": "提示信息 可以填文字或图片地址"
+  },
+  {
+    "key": "tipDetail",
+    "value": "",
+    "mark": "提示详情 可以填文字或图片地址"
   },
   {
     "key": "productTitle",
