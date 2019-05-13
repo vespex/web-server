@@ -59,14 +59,16 @@
     const img = $('#img')
     const result = $('#result')
     const snap = $('#snap')
+    let htmlCanvas
 
     const imageDataArray = []
     const canvasCount = 30
     const config = {
       baseTime: 1200,
       stepTime: 30,
-      transY: 60,
-      delay: 100
+      trans: 20,
+      delay: 100,
+      rotate: 4
     }
 
     let ready = true
@@ -75,47 +77,54 @@
         return false;
       }
       ready = false
-      html2canvas(img)
-        .then(canvas => {
-          const ctx = canvas.getContext('2d');
-          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const pixelArr = imageData.data
-          createBlankImageData(imageData);
-          //put pixel info to imageDataArray (Weighted Distributed)
-          for (let i = 0; i < pixelArr.length; i += 4) {
-            //find the highest probability canvas the pixel should be in
-            const p = Math.floor((i / pixelArr.length) * canvasCount);
-            const a = imageDataArray[weightedRandomDistrib(p)];
-            a[i] = pixelArr[i];
-            a[i + 1] = pixelArr[i + 1];
-            a[i + 2] = pixelArr[i + 2];
-            a[i + 3] = pixelArr[i + 3];
-          }
-          //create canvas for each imageData and append to target element
-          for (let i = 0; i < canvasCount; i++) {
-            const c = newCanvasFromImageData(imageDataArray[i], canvas.width, canvas.height);
-            c.classList.add('dust')
-            result.append(c);
-          }
-          img.addClass('fade')
 
-          $('.dust').each(function (index) {
-            TweenLite.to(this, (config.baseTime + config.stepTime * index) / 1000, {
-              y: -config.transY * Math.random(),
-              scale: 1.2,
-              autoAlpha: 0,
-              delay: config.delay * index / 1000,
-              onComplete: () => {
-                this.remove()
-              }
-            })
-          });
-          setTimeout(() => {
-            ready = true
-            img.removeClass('fade')
-          }, config.baseTime + (config.stepTime + config.delay) * canvasCount)
+      //create canvas for each imageData and append to target element
+      for (let i = 0; i < canvasCount; i++) {
+        const c = newCanvasFromImageData(imageDataArray[i], htmlCanvas.width, htmlCanvas.height);
+        c.classList.add('dust')
+        result.append(c);
+      }
+      img.addClass('fade')
+
+      $('.dust').each(function (index) {
+        TweenLite.to(this, (config.baseTime + config.stepTime * index) / 1000, {
+          x: chance.integer({ min: -config.trans, max: config.trans }),
+          y: chance.integer({ min: -config.trans, max: config.trans }),
+          scale: 1.2,
+          rotation: chance.integer({ min: -config.rotate, max: config.rotate }),
+          autoAlpha: 0,
+          delay: config.delay * index / 1000,
+          onComplete: () => {
+            this.remove()
+          }
         })
+      });
+
+      setTimeout(() => {
+        ready = true
+        img.removeClass('fade')
+      }, config.baseTime + (config.stepTime + config.delay) * canvasCount)
     })
+
+    html2canvas(img)
+      .then(canvas => {
+        htmlCanvas = canvas
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const pixelArr = imageData.data
+        createBlankImageData(imageData);
+        //put pixel info to imageDataArray (Weighted Distributed)
+        for (let i = 0; i < pixelArr.length; i += 4) {
+          //find the highest probability canvas the pixel should be in
+          const p = Math.floor((i / pixelArr.length) * canvasCount);
+          const a = imageDataArray[weightedRandomDistrib(p)];
+          a[i] = pixelArr[i];
+          a[i + 1] = pixelArr[i + 1];
+          a[i + 2] = pixelArr[i + 2];
+          a[i + 3] = pixelArr[i + 3];
+        }
+        
+      })
     function weightedRandomDistrib(peak) {
       var prob = [], seq = [];
       for (let i = 0; i < canvasCount; i++) {
